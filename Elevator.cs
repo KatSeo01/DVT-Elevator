@@ -28,6 +28,7 @@ namespace DVT_Elevator
         public ElevatorState State { get; private set; }
         public List<Person> Passengers => this.people;
         public int PassengerLimit { get; set; } = 10;
+        public int NumFloors => this.numFloors;
 
         // Adds a person to the elevator
         public void AddPerson(Person person)
