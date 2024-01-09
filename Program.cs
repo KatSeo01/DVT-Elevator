@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVT_Elevator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +8,11 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        var elevatorSystem = new ElevatorSystem(numElevators: 3, numFloors: 10);
+        var building = new Building(numFloors: 10, new ElevatorFactory());
+
+        // Simulate user interaction asynchronously
+        await building.RequestElevatorAsync(fromFloor: 3, toFloor: 5, numPassengers: 2);
+        await building.RequestElevatorAsync(fromFloor: 7, toFloor: 2, numPassengers: 1);
 
         Console.WriteLine("Welcome to the Elevator System!");
 
@@ -24,10 +29,10 @@ class Program
             switch (choice)
             {
                 case "1":
-                    RequestElevator(elevatorSystem);
+                    RequestElevator(building);
                     break;
                 case "2":
-                    elevatorSystem.DisplayElevatorStatus();
+                    building.DisplayElevatorStatus();
                     break;
                 case "3":
                     Console.WriteLine("Exiting the Elevator System. Goodbye!");
@@ -39,7 +44,7 @@ class Program
         }
     }
 
-    static void RequestElevator(ElevatorSystem elevatorSystem)
+    static void RequestElevator(Building building)
     {
         try
         {
@@ -52,7 +57,7 @@ class Program
             Console.Write("Enter the number of passengers: ");
             int numPassengers = int.Parse(Console.ReadLine());
 
-            elevatorSystem.RequestElevatorAsync(fromFloor, toFloor, numPassengers).Wait();
+            building.RequestElevatorAsync(fromFloor, toFloor, numPassengers).Wait();
         }
         catch (Exception ex)
         {

@@ -47,6 +47,16 @@ namespace DVT_Elevator
             await AddPassengersAndMoveAsync(nearestElevator, fromFloor, toFloor, numPassengers);
         }
 
+        public void DisplayElevatorStatus()
+        {
+            Console.WriteLine("Elevator Status:");
+            foreach (var elevator in elevators)
+            {
+                Console.WriteLine($"Elevator at Floor {elevator.CurrentFloor}, Direction: {elevator.CurrentDirection}, " +
+                                  $"State: {elevator.State}, Passengers: {elevator.Passengers.Count}");
+            }
+        }
+
         public void Update()
         {
             // Update each elevator
@@ -69,7 +79,7 @@ namespace DVT_Elevator
         {
             foreach (var _ in Enumerable.Range(0, numPassengers))
             {
-                this.personManager.AddPerson(fromFloor, toFloor);
+                this.personManager.AddPerson(fromFloor, toFloor,numPassengers);
             }
 
             await elevator.MoveToFloorAsync(toFloor);
