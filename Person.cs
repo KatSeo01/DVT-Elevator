@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DVT_Elevator
 {
     //The class tracks the person's starting and destination floors.
-    class Person : IPassenger
+    public class Person : IPassenger
     {
         private int startFloor;
         private int destinationFloor;

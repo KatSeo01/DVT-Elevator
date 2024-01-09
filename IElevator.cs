@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DVT_Elevator
 {
     //The IElevator interface defines methods: CurrentFloor, and AddPerson
-    interface IElevator : IElevatorMovement
+    public interface IElevator : IElevatorMovement
     {
         int CurrentFloor { get; }
         Direction CurrentDirection { get; }
@@ -28,7 +28,8 @@ namespace DVT_Elevator
     public enum ElevatorState
     {
         Moving,
-        Stationary
+        Stationary,
+        Idle
     }
 
 }

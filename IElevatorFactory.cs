@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DVT_Elevator
 {
-    interface IElevatorFactory
+    public interface IElevatorFactory
     {
         IElevator CreateElevator(int numFloors);
     }

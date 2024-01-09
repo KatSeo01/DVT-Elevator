@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DVT_Elevator
 {
-    interface IElevatorMovement
+    public interface IElevatorMovement
     {
         Task MoveToFloorAsync(int targetFloor);
     }

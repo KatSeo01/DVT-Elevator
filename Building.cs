@@ -9,7 +9,7 @@ namespace DVT_Elevator
     //The Building class represents a building with elevators. It has a list of elevators and a Person object to manage the people waiting for elevators. 
     //The Building class has methods to add a person to the Person, check if there are people waiting for elevators, and update the state of the elevators and people.
 
-    class Building : IElevatorRequestHandler
+    public class Building : IElevatorRequestHandler
     {
         private List<IElevator> elevators; // Stores a collection of elevators
         private PersonManager personManager; // Manages people waiting for elevators
@@ -92,7 +92,7 @@ namespace DVT_Elevator
         }
 
         //Ensures that a given floor number is within the valid range of floors in the building.
-        private void ValidateFloor(int floor, string paramName)
+        public void ValidateFloor(int floor, string paramName)
         {
             if (floor < 1 || floor > this.numFloors)
             {
