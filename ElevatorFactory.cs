@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DVT_Elevator
 {
     //Creates a new Elevator instance
-    class ElevatorFactory : IElevatorFactory
+    public class ElevatorFactory : IElevatorFactory
     {
         public IElevator CreateElevator(int numFloors)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DVT_Elevator
 {
-    interface IPassenger
+    public interface IPassenger
     {
         int CurrentFloor { get; }
         int DestinationFloor { get; }

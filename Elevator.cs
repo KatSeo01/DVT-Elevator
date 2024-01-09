@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DVT_Elevator
 {
     //The Elevator class implements the IElevator interface. It has private fields for the number of floors, current floor, direction, and list of people in the elevator. 
-    class Elevator : IElevator
+    public class Elevator : IElevator
     {
         private int numFloors; // Total number of floors in the building
         private int currentFloor; // Current floor of the elevator

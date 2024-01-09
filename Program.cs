@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-class Program
+public class Program
 {
     static async Task Main(string[] args)
     {

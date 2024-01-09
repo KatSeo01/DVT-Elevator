@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DVT_Elevator
 {
     //The Person class is responsible for managing a list of people or passengers.
-    class PersonManager
+    public class PersonManager
     {
         private List<IPassenger> passengers; // Stores a list of passengers
 
