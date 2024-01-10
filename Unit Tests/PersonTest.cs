@@ -20,7 +20,8 @@ namespace ElevatorTest
             var currentFloor = person.CurrentFloor;
 
             // Assert
-            Assert.AreEqual(3, currentFloor);
+            Assert.That(currentFloor, Is.EqualTo(3));
+
         }
 
         [Test]
@@ -33,7 +34,8 @@ namespace ElevatorTest
             var destinationFloor = person.DestinationFloor;
 
             // Assert
-            Assert.AreEqual(4, destinationFloor);
+            Assert.That(destinationFloor, Is.EqualTo(4));
+
         }
 
         [Test]

@@ -22,7 +22,8 @@ namespace ElevatorTest
             elevator.AddPerson(person);
 
             // Assert
-            Assert.AreEqual(1, elevator.Passengers.Count);
+            Assert.That(elevator.Passengers.Count, Is.EqualTo(1));
+
         }
 
         [Test]
@@ -40,7 +41,8 @@ namespace ElevatorTest
             elevator.AddPerson(person2);
 
             // Assert
-            Assert.AreEqual(1, elevator.Passengers.Count);
+            Assert.That(elevator.Passengers.Count, Is.EqualTo(1));
+
         }
 
         [Test]

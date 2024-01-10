@@ -21,7 +21,7 @@ namespace ElevatorTest
 
             // Assert
             var people = personManager.GetPeople();
-            Assert.AreEqual(3, people.Count);
+            Assert.That(people.Count, Is.EqualTo(3));
             Assert.IsTrue(people.All(p => p.CurrentFloor == 3 && p.DestinationFloor == 5));
         }
 
@@ -63,8 +63,9 @@ namespace ElevatorTest
             var people = personManager.GetPeople();
 
             // Assert
-            Assert.AreEqual(2, people.Count);
-            Assert.AreNotSame(personManager.GetPeople(), people);
+            Assert.That(people.Count, Is.EqualTo(2));
+            Assert.That(personManager.GetPeople(), Is.Not.SameAs(people));
+
         }
 
         [Test]
@@ -80,7 +81,8 @@ namespace ElevatorTest
 
             // Assert
             var people = personManager.GetPeople();
-            Assert.AreEqual(0, people.Count);
+            Assert.That(people.Count, Is.EqualTo(0));
+
         }
     }
 

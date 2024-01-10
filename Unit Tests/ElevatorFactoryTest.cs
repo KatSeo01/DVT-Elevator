@@ -35,8 +35,9 @@ namespace ElevatorTest
             var elevator2 = elevatorFactory.CreateElevator(10);
 
             // Assert
-            Assert.AreEqual(5, GetElevatorNumFloors(elevator1));
-            Assert.AreEqual(10, GetElevatorNumFloors(elevator2));
+            Assert.That(GetElevatorNumFloors(elevator1), Is.EqualTo(5));
+            Assert.That(GetElevatorNumFloors(elevator2), Is.EqualTo(10));
+
         }
 
         [Test]
@@ -46,11 +47,16 @@ namespace ElevatorTest
             var elevatorFactory = new ElevatorFactory();
 
             // Act
-            var elevator = elevatorFactory.CreateElevator(5);
+            var elevator = elevatorFactory.CreateElevator(10);
 
             // Assert
-            Assert.IsNotNull(elevator);
-            Assert.IsInstanceOf<Elevator>(elevator);
+            Assert.That(elevator, Is.Not.Null);
+            Assert.That(elevator, Is.TypeOf<Elevator>());
+            Assert.That(elevator.CurrentFloor, Is.EqualTo(1));
+            Assert.That(elevator.CurrentDirection, Is.EqualTo(Direction.None));
+            Assert.That(elevator.State, Is.EqualTo(ElevatorState.Stationary));
+            Assert.That(elevator.Passengers, Is.Not.Null.And.Empty);
+            Assert.That(elevator.PassengerLimit, Is.EqualTo(10));
         }
 
         // Helper method to get the number of floors from an IElevator instance

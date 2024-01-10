@@ -1,4 +1,5 @@
 ﻿using DVT_Elevator;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -21,7 +22,8 @@ namespace ElevatorTest
             await elevatorMovement.MoveToFloorAsync(5);
 
             // Assert
-            Assert.AreEqual(5, (elevatorMovement as MockElevatorMovement)?.CurrentFloor);
+            Assert.That((elevatorMovement as MockElevatorMovement)?.CurrentFloor, Is.EqualTo(5));
+
         }
 
         [Test]
