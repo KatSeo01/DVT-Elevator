@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public class Program
 {
-    static async Task Main(string[] args)
+    public static async Task Main(string[] args)
     {
 
         var building = new Building(numFloors: 10, new ElevatorFactory());
@@ -45,18 +45,18 @@ public class Program
         }
     }
 
-    static void RequestElevator(Building building)
+    public static void RequestElevator(Building building)
     {
         try
         {
             Console.Write("Enter current floor: ");
-            int fromFloor = int.Parse(Console.ReadLine());
+            int fromFloor = int.Parse(Console.ReadLine()!); 
 
             Console.Write("Enter destination floor: ");
-            int toFloor = int.Parse(Console.ReadLine());
+            int toFloor = int.Parse(Console.ReadLine()!);
 
             Console.Write("Enter the number of passengers: ");
-            int numPassengers = int.Parse(Console.ReadLine());
+            int numPassengers = int.Parse(Console.ReadLine()!);
 
             building.RequestElevatorAsync(fromFloor, toFloor, numPassengers).Wait();
         }
