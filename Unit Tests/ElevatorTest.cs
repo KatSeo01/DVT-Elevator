@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DVT_Elevator;
 using Moq;
+using NUnit.Framework.Legacy;
 
 namespace ElevatorTest
 {

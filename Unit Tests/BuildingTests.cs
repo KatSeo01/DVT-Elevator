@@ -1,15 +1,10 @@
-using NUnit.Framework;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestPlatform.Utilities;
 using DVT_Elevator;
+using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace ElevatorTest
 {
-    [TestFixture]
     class BuildingTests
     {
         private Mock<IElevatorFactory> elevatorFactoryMock;
